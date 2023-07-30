@@ -4,6 +4,7 @@
 
 #총 M개의 줄에 입력으로 주어진 i번째 수에서 j번째 수까지의 합을 출력한다.
 
+"""
 firstline = list(map(int, input().split()))
 numbers = list(map(int, input().split()))
 
@@ -13,5 +14,19 @@ questions = firstline[1]
 for series in numbers:
     sum = 0
     series = series + sum
+"""
 
 #조금 더 고민해보기,,,,,, 
+suNo, quizNo = map(int, input().split())
+numbers = list(map(int, input().split()))
+prefix_sum = [0]
+temp = 0
+
+for i in numbers:
+    temp = temp + 1
+    prefix_sum.append(temp)
+
+for i in range(quizNo):
+    s, e = map(int, input().split())
+    print(prefix_sum[e] - prefix_sum[s-1])
+
