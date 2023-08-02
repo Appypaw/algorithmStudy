@@ -1,6 +1,6 @@
 #투포인터
 
-n = input()
+n = int(input())
 
 count = 1
 start_index = 1
