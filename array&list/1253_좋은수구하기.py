@@ -5,4 +5,16 @@
 import sys
 
 N = int(input())#데이터 개수
+input = sys.stdin.readline  #다시 보기
 Result = 0#좋은 수 개수 저장 변수
+A = list(map(int, input().split()))
+A.sort      #이 메소드 써도 되나??
+
+for k in range(N):
+    find = A[k]
+    i = 0
+    j = N - 1
+    while i < j:
+        if A[i] + A[j] == find:
+            if i != k and j !=k:
+                Result += 1
