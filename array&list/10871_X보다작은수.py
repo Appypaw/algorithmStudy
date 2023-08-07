@@ -16,4 +16,4 @@ for i in arr:
     if i < value:
         newArr.append(i)
 
-print(newArr)
+print(" ".join(map(str, newArr)))
