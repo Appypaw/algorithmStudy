@@ -17,3 +17,4 @@ for i in arr:
         newArr.append(i)
 
 print(" ".join(map(str, newArr)))
+
