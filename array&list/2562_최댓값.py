@@ -12,13 +12,15 @@
 
 """
 
-numArr = map(int, input().split())
+numbers = []
+for _ in range(9):
+    num = int(input())
+    numbers.append(num)
 
-print(max(numArr))
-ind = max(numArr) 
+# 최댓값과 위치 찾기
+max_value = max(numbers)
+max_index = numbers.index(max_value) + 1
 
-while ind != max(numArr):
-    if int(ind) == int(max(numArr)):
-        break
-
-print
+# 결과 출력
+print(max_value)
+print(max_index)
