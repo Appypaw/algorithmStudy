@@ -8,3 +8,17 @@
 
 """
 
+# 입력 받기
+N, M = map(int, input().split())  # 바구니 개수 N과 방법 개수 M 입력 받기
+
+# 초기화
+buckets = [0] * N  # 바구니를 나타내는 리스트, 초기에는 모두 0으로 초기화
+
+# 방법 수행 및 공 넣기
+for _ in range(M):
+    i, j, k = map(int, input().split())  # 방법 정보 입력 받기
+    for idx in range(i - 1, j):  # 바구니 인덱스는 0부터 시작하므로 i-1부터 j까지 반복
+        buckets[idx] = k
+
+# 결과 출력
+print(*buckets)  # 리스트의 요소들을 공백으로 구분하여 출력
