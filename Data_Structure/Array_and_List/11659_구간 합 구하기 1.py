@@ -14,6 +14,8 @@
     1 ≤ M ≤ 100,000
     1 ≤ i ≤ j ≤ N
 """
+import sys
+input = sys.stdin.readline
 
 numNo, questionNo = map(int, input().split())
 numbers = list(map(int, input().split()))
