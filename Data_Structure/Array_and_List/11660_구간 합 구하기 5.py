@@ -9,8 +9,8 @@ import sys
 input = sys.stdin.readline
 
 size, query = map(int, input().split())
-A = [[0] * (n+1)] #1차원 배열 선언. 나중에 append를 통해 2차원 배열로 확장
-D = [[0] * (n+1) for _ in range(n+1)] #2차원 배열 선언 및 초기화
+A = [[0] * (size+1)] #1차원 배열 선언. 나중에 append를 통해 2차원 배열로 확장
+D = [[0] * (size+1) for _ in range(size+1)] #2차원 배열 선언 및 초기화
 
 for i in range(size):
     A_row = [0]+[int(x) for x in input().split()] #[0] + [int(x) for x in input().split()] 부분에서 앞의 [0]은 리스트의 맨 앞에 0을 추가. 사용자가 1 2 3을 입력했다면 이 구문은 [0, 1, 2, 3]을 생성.
@@ -23,3 +23,4 @@ for i in range(1, size+1):
 for _ in range(query):
     x1, y1, x2, y2 = map(int, input().split())
     result = D[x2][y2] - D[x1-1][y2] - D[x2][y1-1] + D[x1-1][y1-1]
+    print(result)
