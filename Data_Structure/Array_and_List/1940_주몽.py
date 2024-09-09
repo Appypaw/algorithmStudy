@@ -19,12 +19,38 @@
 """
 import sys
 
-input() = sys.stdin.readline()
+input = sys.stdin.readline
 
-n, m = int(input())
+n = int(input())
+m = int(input())
+
 num = list(map(int, input().split()))
 num.sort()
 
-count = 0
+s = 0
+e = n-1
+
+sum = num[e]
+answer = 0
+
+while s < e:
+    if num[s] + num[e] < m:
+        s += 1
+    elif num[s] + num[e] > m:
+        e -= 1
+    else:
+        answer += 1
+        s += 1
+        e -= 1
 
 
+print(answer)
+
+"""
+Test
+6
+9
+2 7 4 1 5 3
+
+sorted = 1 2 3 4 5 7
+"""
