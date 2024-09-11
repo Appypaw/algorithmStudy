@@ -32,8 +32,8 @@ a 	b 	result
 
 def solution(a, b):
     answer = 0
-    a = str()
-    b = str()
+    a = str(a)
+    b = str(b)
     ab = int(a+b)
     ba = int(b+a)
 
@@ -42,3 +42,8 @@ def solution(a, b):
     else:
         answer = ba
     return answer
+
+"""
+def solution(a, b):
+    return int(max(f"{a}{b}", f"{b}{a}"))
+"""
