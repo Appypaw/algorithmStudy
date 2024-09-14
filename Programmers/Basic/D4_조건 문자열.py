@@ -33,10 +33,8 @@ ineq 	eq 	n 	m 	result
 """
 
 def solution(ineq, eq, n, m):
-    # 두 문자열을 합쳐서 조건을 만듭니다.
     condition = ineq + eq
 
-    # 조건에 따라 비교를 수행하고 결과를 반환합니다.
     if condition == "<=":
         return 1 if n <= m else 0
     elif condition == ">=":
@@ -46,5 +44,9 @@ def solution(ineq, eq, n, m):
     elif condition == ">!":
         return 1 if n > m else 0
 
-    # 기본적으로 반환될 값 (실제로는 도달하지 않음)
     return 0
+
+"""
+def solution(ineq, eq, n, m):
+    return int(eval(str(n)+ineq+eq.replace('!', '')+str(m)))
+"""
