@@ -23,17 +23,16 @@ arr 	result
 """
 
 def solution(arr):
-    i=0
+    i = 0
     stk = []
     while i < len(arr):
-        if not stk[0]:
-            stk.append(arr)
-            i += 1
-        elif stk[0] and stk[-1] < arr[i]:
+        if not stk:  # stk가 빈 리스트인 경우
             stk.append(arr[i])
             i += 1
-        elif stk[0] and stk[-1] >= arr[i]:
-            stk.pop(arr[i])
+        elif stk[-1] < arr[i]:  # stk의 마지막 원소가 arr[i]보다 작은 경우
+            stk.append(arr[i])
             i += 1
+        else:  # stk의 마지막 원소가 arr[i]보다 크거나 같은 경우
+            stk.pop()  # 마지막 원소 제거
 
     return stk

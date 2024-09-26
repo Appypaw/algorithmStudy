@@ -13,5 +13,12 @@
 """
 
 def solution(my_string, m, c):
-    answer = ''
-    return answer
+    answer = []
+    for i in range(0, len(my_string), m):
+        answer.append(my_string[i + c -1])
+
+    return ''.join(answer)
+
+# 4(m)씩 쪼개서 2(c)번째
+# 0 1 2 3  4 5 6 7  8 9 10 11...
+# 1, 5, 9,, (c-1)+m*i
