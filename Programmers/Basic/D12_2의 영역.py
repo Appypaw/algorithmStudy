@@ -15,6 +15,6 @@ def solution(arr):
     if 2 not in arr:
         return [-1]
     
-    s = arr.index(2)
+    s = arr.index(2) #index 메소드는 인자가 있는 가장 처음 인덱스를 리턴함.
     e = len(arr) - 1 - arr[::-1].index(2)
     return arr[s:e+1]

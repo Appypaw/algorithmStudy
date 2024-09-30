@@ -1,17 +1,20 @@
-#https://school.programmers.co.kr/learn/courses/30/lessons/181899
+#https://school.programmers.co.kr/learn/courses/30/lessons/181898
 """
 문제 설명
 
-정수 start_num와 end_num가 주어질 때, start_num에서 end_num까지 1씩 감소하는 수들을 차례로 담은 리스트를 return하도록 solution 함수를 완성해주세요.
+정수 배열 arr가 주어집니다. 이때 arr의 원소는 1 또는 0입니다. 정수 idx가 주어졌을 때, idx보다 크면서 배열의 값이 1인 가장 작은 인덱스를 찾아서 반환하는 solution 함수를 완성해 주세요.
+
+단, 만약 그러한 인덱스가 없다면 -1을 반환합니다.
 
 """
 
-def solution(start_num, end_num):
-    answer = []
-    while start_num > end_num:
-        start_num -= 1
-        answer.append(start_num)
+def solution(arr, idx):
+    if idx >= len(arr):
+        return -1
 
-    return answer
-
-print(solution(10,3))
+    while idx < len(arr):
+        if arr[idx] == 1:
+            return idx
+        idx += 1
+    
+    return -1 
