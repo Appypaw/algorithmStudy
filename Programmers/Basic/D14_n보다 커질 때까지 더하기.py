@@ -1,18 +1,23 @@
-#https://school.programmers.co.kr/learn/courses/30/lessons/181886
+#https://school.programmers.co.kr/learn/courses/30/lessons/181884
 """
 문제 설명
 
-최대 5명씩 탑승가능한 놀이기구를 타기 위해 줄을 서있는 사람들의 이름이 담긴 문자열 리스트 names가 주어질 때, 
-앞에서 부터 5명씩 묶은 그룹의 가장 앞에 서있는 사람들의 이름을 담은 리스트를 return하도록 solution 함수를 완성해주세요. 
-마지막 그룹이 5명이 되지 않더라도 가장 앞에 있는 사람의 이름을 포함합니다.
+정수 배열 numbers와 정수 n이 매개변수로 주어집니다. numbers의 원소를 앞에서부터 하나씩 더하다가 그 합이 n보다 커지는 순간 이때까지 더했던 원소들의 합을 return 하는 solution 함수를 작성해 주세요.
 """
 
-def solution(names):
-    answer = []
-    answer.append(names[::5])
-    return sum(answer, [])
-
+def solution(numbers, n):
+    sum_list = []
+    temp = 0
+    for i in numbers:
+        temp += i
+        sum_list.append(temp)
+    
+    for j in sum_list:
+        if j > n:
+            return j
+        
 """
-def solution(names):
-    return names[::5]
+def solution(numbers, n):
+    return next(sum(numbers[:i + 1]) for i in range(len(numbers)) if sum(numbers[:i + 1]) > n)
+
 """
