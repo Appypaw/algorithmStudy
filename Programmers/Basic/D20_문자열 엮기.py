@@ -1,18 +1,25 @@
-#https://school.programmers.co.kr/learn/courses/30/lessons/181857
+#https://school.programmers.co.kr/learn/courses/30/lessons/181855
 """
 문제 설명
 
-정수 배열 arr이 매개변수로 주어집니다. 
-arr의 길이가 2의 정수 거듭제곱이 되도록 arr 뒤에 정수 0을 추가하려고 합니다. 
-arr에 최소한의 개수로 0을 추가한 배열을 return 하는 solution 함수를 작성해 주세요.
+문자열 배열 strArr이 주어집니다. 
+strArr의 원소들을 길이가 같은 문자열들끼리 그룹으로 묶었을 때 가장 개수가 많은 그룹의 크기를 return 하는 solution 함수를 완성해 주세요.
 """
+from collections import Counter
 
-def solution(arr):
-    n = 0
-    while len(arr) > 2 ** n:
-        n += 1
+def solution(strArr):
+    answer = 0
+    temp = []
+    for i in strArr:
+        temp.append(len(i))
 
-    for _ in range((2**n)-len(arr)):
-        arr.append(0)
-    
-    return arr
+    cnt = Counter(temp)
+    return max(cnt.values())
+
+"""
+def solution(strArr):
+    a=[0]*31
+    for x in strArr: 
+        a[len(x)]+=1
+    return max(a)
+"""
