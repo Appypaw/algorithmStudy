@@ -8,4 +8,13 @@ myString의 "A"를 "B"로, "B"를 "A"로 바꾼 문자열의 연속하는 부분
 
 def solution(myString, pat):
     answer = 0
+    temp = ''
+    for i in myString:
+        if i == 'A':
+            temp += 'B'
+        else:
+            temp += 'A'
+
+    if pat in temp:
+        return 1
     return answer
