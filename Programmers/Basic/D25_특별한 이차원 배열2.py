@@ -9,5 +9,11 @@ n × n 크기의 이차원 배열 arr이 매개변수로 주어질 때, arr이 �
 """
 
 def solution(arr):
-    answer = 0
-    return answer
+    n = len(arr)
+    
+    for i in range(n):
+        for j in range(i + 1, n): 
+            if arr[i][j] != arr[j][i]:  
+                return 0 
+    
+    return 1
