@@ -37,10 +37,8 @@ def DFS(v):
         print(v)
     else:
         for i in range(1, 10):
-            if i % 2 == 0:
-                continue
-            if isPrime(v * 10 + i):
-                DFS(v * 10+i)
+            if i % 2 != 0 and isPrime(v * 10 + i):
+                DFS(v * 10 + i)
 
 DFS(2)
 DFS(3)
