@@ -31,11 +31,30 @@ import sys
 Node, Edge = map(int, sys.stdin.readline().split())
 A = [[] for _ in range(Node)]
 visited = [False] * Node
-arrive = False
 depth = 0
+answer = 0
 
-def DFS(v):
-    if depth == 5:
-        cnt += 1
-    else:
+for _ in range(Edge):
+    s, e = map(int, sys.stdin.readline().split())
+    A[s].append(e)
+    A[e].append(s)
+
+def DFS(v, depth):
+        global answer
+        if depth == 4:
+            answer = 1
+            return
         
+        else:
+            for i in A[v]:
+                if not visited[i]:
+                    visited[i] = True
+                    DFS(i, depth + 1)
+                    visited[i] = False
+        
+for i in range(Node):
+    visited[i] = True
+    DFS(i, 0)
+    visited[i] = False
+    if answer == 1:  # 정답을 찾으면 종료
+        break
